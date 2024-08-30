@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">{{ title }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id_name">Nombre del Producto</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="id_quantity">Cantidad</label>
+                    {{ form.quantity }}
+                    {% if form.quantity.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.quantity.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id_reorder_level">Nivel de Reorden</label>
+                    {{ form.reorder_level }}
+                    {% if form.reorder_level.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.reorder_level.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="id_supplier">Proveedor</label>
+                    {{ form.supplier }}
+                    {% if form.supplier.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.supplier.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="id_description">Descripción</label>
+                    {{ form.description }}
+                    {% if form.description.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.description.errors %}
+                        {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-cloud-upload-alt"></i> Guardar</button>
+            <a href="{% url 'product_list' %}" class="btn btn-sm btn-secondary"><i class="fas fa-ban"></i> Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
