@@ -32,7 +32,7 @@ class PurchaseOrder(BaseModel):
     def __str__(self):
         return f"Order {self.id} - {self.supplier.name}"
 
-class PurchaseOrderItem(models.Model):
+class PurchaseOrderItem(BaseModel):
     purchase_order = models.ForeignKey(PurchaseOrder, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()

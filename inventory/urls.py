@@ -18,4 +18,10 @@ urlpatterns = [
     # Endpoints para Supplier
     path('api/suppliers/', endpoints.SupplierList.as_view(), name='supplier_api_list'),
     path('api/suppliers/<int:pk>/', endpoints.SupplierDetail.as_view(), name='supplier_api_detail'),
+    # Endpoints para PurchaseOrder
+    path('api/purchase-orders/', endpoints.PurchaseOrderList.as_view(), name='purchase_order_api_list'),
+    path('api/purchase-orders/<int:pk>/', endpoints.PurchaseOrderDetail.as_view(), name='purchase_order_api_detail'),
+    # Endpoints para PurchaseOrderItem
+    path('api/purchase-order-items/', endpoints.PurchaseOrderItemList.as_view(), name='purchase_order_item_api_list'),
+    path('api/purchase-order-items/<int:pk>/', endpoints.PurchaseOrderItemDetail.as_view(), name='purchase_order_item_api_detail'),
 ]

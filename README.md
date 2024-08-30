@@ -14,7 +14,7 @@ BarbacoaSystem es un sistema de gestión para una empresa de barbacoa que utiliz
 
 ### Requisitos previos
 
-- Python 3.8+
+- Python 3.11.2
 - PostgreSQL
 - Virtualenv
 
@@ -23,7 +23,7 @@ BarbacoaSystem es un sistema de gestión para una empresa de barbacoa que utiliz
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tuusuario/barbacoasystem.git
+   git clone https://github.com/SzunigaDev/barbacoasystem.git
    cd barbacoasystem
    ```
 
